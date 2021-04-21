@@ -11,6 +11,5 @@ The following dependencies need to be added to properly run the application
     "react-native-reanimated"
     "react-native-safe-area-context"
     "react-native-screens"
-  },```
-  
- 
+  },
+  ```
