@@ -13,23 +13,43 @@ import TestScreen from './src/Screens/TestScreen';
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
-function MyTabs() {
+function Savings() {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Savings" component={HomeScreen} />
-      <Tab.Screen name="Expenses" component={ExpensesScreen} />
-      <Tab.Screen name="Investments" component={InvestmentsScreen} />
-      <Tab.Screen name="Notifications" component={NotificationsScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
-    </Tab.Navigator>
+    <Stack.Navigator>
+      <Stack.Screen name="Savings" component={HomeScreen} />
+      <Stack.Screen name="Test" component={TestScreen} />
+    </Stack.Navigator>
   );
 }
 
-function MainScreen() {
+function Expenses() {
   return (
     <Stack.Navigator>
-      <Tab.Screen name="Savings" component={HomeScreen} />
-      <Stack.Screen name="Test" component={TestScreen} />
+      <Tab.Screen name="Expenses" component={ExpensesScreen} />
+    </Stack.Navigator>
+  );
+}
+
+function Investments() {
+  return (
+    <Stack.Navigator>
+      <Tab.Screen name="Investments" component={InvestmentsScreen} />
+    </Stack.Navigator>
+  );
+}
+
+function Notifications() {
+  return (
+    <Stack.Navigator>
+      <Tab.Screen name="Notifications" component={NotificationsScreen} />
+    </Stack.Navigator>
+  );
+}
+
+function Profile() {
+  return (
+    <Stack.Navigator>
+      <Tab.Screen name="Profile" component={ProfileScreen} />
     </Stack.Navigator>
   );
 }
@@ -38,11 +58,11 @@ export default function App() {
   return (
     <NavigationContainer>
        <Tab.Navigator>
-      <Tab.Screen name="Savings" component={MainScreen} />
-      <Tab.Screen name="Expenses" component={ExpensesScreen} />
-      <Tab.Screen name="Investments" component={InvestmentsScreen} />
-      <Tab.Screen name="Notifications" component={NotificationsScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
+      <Tab.Screen name="Savings" component={Savings} />
+      <Tab.Screen name="Expenses" component={Expenses} />
+      <Tab.Screen name="Investments" component={Investments} />
+      <Tab.Screen name="Notifications" component={Notifications} />
+      <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
     </NavigationContainer>
   );
