@@ -5,7 +5,7 @@ export default class TestScreen extends Component {
     render() {
         return (
             <SafeAreaView style={styles.container}>
-                <Text> TestScreen </Text>
+                <Text> Current Savings </Text>
             </SafeAreaView>
         )
     }

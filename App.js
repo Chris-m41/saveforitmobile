@@ -17,7 +17,7 @@ function Savings() {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Savings" component={HomeScreen} />
-      <Stack.Screen name="Test" component={TestScreen} />
+      <Stack.Screen name="Current Savings" component={TestScreen} />
     </Stack.Navigator>
   );
 }

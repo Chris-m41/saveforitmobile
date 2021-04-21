@@ -20,7 +20,7 @@ class HomeScreen extends Component {
                 <Button
       title="Next"
       onPress={() => {
-        navigation.navigate('Test');
+        navigation.navigate('Current Savings');
       }}
     />
             </SafeAreaView>
