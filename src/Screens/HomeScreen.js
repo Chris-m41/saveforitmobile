@@ -2,6 +2,7 @@ import React, { useState, Component } from 'react'
 import { Text, StyleSheet, SafeAreaView, TextInput, Button } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 import {Picker} from '@react-native-picker/picker';
+import CurrentSavings from './CurrentSavings';
 
 class HomeScreen extends Component {
     state = {
@@ -14,7 +15,7 @@ class HomeScreen extends Component {
 
     onSubmit = () => {
         console.log('state', this.state);
-        this.props.navigation.navigate('Current Savings');
+        this.props.navigation.navigate('Current Savings', { state: this.state });
     }
 
     render() {
