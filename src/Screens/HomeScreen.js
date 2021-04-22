@@ -1,5 +1,5 @@
 import React, { useState, Component } from 'react'
-import { Text, StyleSheet, SafeAreaView, TextInput, Button } from 'react-native'
+import { Text, StyleSheet, SafeAreaView, TextInput, Button, View } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 import {Picker} from '@react-native-picker/picker';
 import CurrentSavings from './CurrentSavings';
@@ -21,28 +21,39 @@ class HomeScreen extends Component {
     render() {
         return (
             <SafeAreaView style={styles.container}>
-                <Text> Paycheck Amount </Text>
+                <Text style={styles.text}> Paycheck Amount </Text>
                 <TextInput 
-                placeholder='$800' 
-                onChangeText={paycheck => this.setState({paycheck})}
+                style={styles.textInput}
+                value={this.state.paycheck}
+                placeholder='800' 
+                onChangeText={(text) => {
+                    text = text.split('$').join('')
+                    this.setState({
+                        paycheck: `$${text}`
+                    })
+                }}
                 />
-                <Text> Paychecks per month </Text>
+                <Text style={styles.text}> Paychecks per month </Text>
                 <TextInput 
+                style={styles.textInput}
                 placeholder='2' 
                 onChangeText={occurences => this.setState({occurences})}
                 />
-                <Text> Monthly Expenses </Text>
+                <Text style={styles.text}> Monthly Expenses </Text>
                 <TextInput 
+                style={styles.textInput}
                 placeholder='$1000' 
                 onChangeText={expenses => this.setState({expenses})}
                 />
-                <Text> Monthly towards Savings </Text>
+                <Text style={styles.text}> Monthly towards Savings </Text>
                 <TextInput 
+                style={styles.textInput}
                 placeholder='$50' 
                 onChangeText={towardsSavings => this.setState({towardsSavings})}
                 />
-                <Text> Monthly towards Investments </Text>
+                <Text style={styles.text}> Monthly towards Investments </Text>
                 <TextInput 
+                style={styles.textInput}
                 placeholder='$50' 
                 onChangeText={towardsInvestments => this.setState({towardsInvestments})}
                 />
@@ -61,6 +72,19 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
+    text: {
+        fontSize: 25,
+    },
+    textInput: {
+        height: 35,
+        borderWidth: 2,
+        width: 200,
+        fontSize: 20,
+        textAlign: 'center',
+    },
+    textInputV2: {
+        flexDirection: 'row',
+    }
 })
 
 export default function(props) {
