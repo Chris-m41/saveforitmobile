@@ -8,7 +8,7 @@ import ExpensesScreen from './src/Screens/ExpensesScreen';
 import ProfileScreen from './src/Screens/ProfileScreen';
 import InvestmentsScreen from './src/Screens/InvestmentsScreen';
 import NotificationsScreen from './src/Screens/NotificationsScreen';
-import TestScreen from './src/Screens/TestScreen';
+import CurrentSavings from './src/Screens/CurrentSavings';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -17,7 +17,7 @@ function Savings() {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Savings" component={HomeScreen} />
-      <Stack.Screen name="Current Savings" component={TestScreen} />
+      <Stack.Screen name="Current Savings" component={CurrentSavings} />
     </Stack.Navigator>
   );
 }
