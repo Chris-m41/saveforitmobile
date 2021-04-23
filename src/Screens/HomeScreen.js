@@ -15,7 +15,7 @@ class HomeScreen extends Component {
 
     onSubmit = () => {
         console.log('state', this.state);
-        this.props.navigation.navigate('Current Savings', { state: this.state });
+        this.props.navigation.navigate('Current Savings', { homeScreen: this.state });
     }
 
     render() {
@@ -24,14 +24,8 @@ class HomeScreen extends Component {
                 <Text style={styles.text}> Paycheck Amount </Text>
                 <TextInput 
                 style={styles.textInput}
-                value={this.state.paycheck}
-                placeholder='800' 
-                onChangeText={(text) => {
-                    text = text.split('$').join('')
-                    this.setState({
-                        paycheck: `$${text}`
-                    })
-                }}
+                placeholder='$800' 
+                onChangeText={paycheck => this.setState({paycheck})}
                 />
                 <Text style={styles.text}> Paychecks per month </Text>
                 <TextInput 
@@ -73,14 +67,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     text: {
-        fontSize: 25,
+        fontSize: 23,
     },
     textInput: {
         height: 35,
         borderWidth: 2,
         width: 200,
         fontSize: 20,
-        textAlign: 'center',
     },
     textInputV2: {
         flexDirection: 'row',

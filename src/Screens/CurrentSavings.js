@@ -8,10 +8,15 @@ class CurrentSavings extends Component {
         currentSavings: 0,
         currentInvestments: 0,
     };
+    homeScreenState = this.props.route.params.homeScreen;
 
     saveInfo = () => {
-        console.log('props', this.props.route.params.state);
+        console.log('props', this.homeScreenState);
         console.log('this.state', this.state);
+        this.props.navigation.navigate('Notifications', {
+            screen: 'Notifications',
+            params: { currentSavings: this.state, homeScreen: this.homeScreenState },
+          });
     }
 
     render() {
